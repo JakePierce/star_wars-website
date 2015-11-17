@@ -1,0 +1,18 @@
+{% load staticfiles %}
+
+<!-- Add another type of backdrop
+     Think of something like
+     Wildstar! -->
+
+{% block body %}
+
+    <h2 class> Here Is a List of All the Planets: </h2>
+
+    {% for homeworld in planet %}
+
+        <a href="/planet_detail/{{ homeworld.id }}">{{ homeworld.name }}</a><br>
+
+    {% endfor %}
+
+{% endblock %}
+

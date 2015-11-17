@@ -1,0 +1,71 @@
+{% block body %}
+
+    <div class="container">
+        <div class="row">
+            <div class="box">
+                <div class="col-lg-12 text-center">
+                <hr>
+                <h2 class="text-center"> Create a New Starship Inside the Star Wars Universe!</h2>
+                <hr>
+                    <form actions="/create_starship">
+                        {% csrf_token %}
+                        <label for="name"> Name: </label>
+                        <input type="text" name="name" id="name">
+                        <br>                        
+                        <label for="manufacturer"> Manufacturer: </label>
+                        <input type="text" manufacturer="manufacturer" id="manufacturer">
+                        <br>
+                        <label for="price"> Price: </label>
+                        <input type="text" price="price" id="price">
+                        <br>
+                        <label for="size"> Size: </label>
+                        <input type="text" size="size" id="size">
+                        <br>                        
+                        <label for="top_atmosphering_speed"> Top Atmosphering Speed: </label>
+                        <input type="text" top_atmosphering_speed="top_atmosphering_speed" id="top_atmosphering_speed">
+                        <br>                        
+                        <label for="crew"> Number of Potential Working Crew: </label>
+                        <input type="text" crew="crew" id="crew">
+                        <br>                        
+                        <label for="passengers"> Passengers: </label>
+                        <input type="text" passengers="passengers" id="passengers">
+                        <br>                        
+                        <label for="cargo_capacity"> Cargo Capacity: </label>
+                        <input type="text" cargo_capacity="cargo_capacity" id="cargo_capacity">
+                        <br>
+                        <label for="consumables"> Consumables: </label>
+                        <input type="text" consumables="consumables" id="consumables">
+                        <br>
+                        <label for="hyperdrive_rating"> Hyper-Drive Rating: </label>
+                        <input type="text" hyperdrive_rating="hyperdrive_rating" id="hyperdrive_rating">
+                        <br>                        
+                        <label for="MGLT"> MGLT -- Megalight Speed Acceleration: </label>
+                        <input type="text" MGLT="MGLT" id="MGLT">
+                        <br>
+                        <label for="starship_class"> Starship Class: </label>
+                        <input type="text" starship_class="starship_class" id="starship_class">
+                        <br>                        
+                        <label for="pilots"> Known Pilots: </label>
+                        <input type="text" pilots="pilots" id="pilots">
+                        <br>
+
+                        <input type="submit" value="Create">
+                        <select name="starship" id="starship">
+                            <option value="">Select a Starship</option>
+                            {% for ship in starship %}
+                                <option value="{{ship.pk}}"> {{ship.name}}</option>
+                            {% endfor %}
+                        </select>
+
+                    </form>
+                        {% if created %}
+                            <h4>Your Starship Has Been Created!</h4>
+                        {% else %}
+                            <h4>All the Starships Are Up to Date!</h4>
+                        {% endif %}
+                </div>
+            </div>
+        </div>
+    </div>
+
+{% endblock %}

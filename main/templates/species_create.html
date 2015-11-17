@@ -1,0 +1,59 @@
+{% block body %}
+
+    <div class="container">
+        <div class="row">
+            <div class="box">
+                <div class="col-lg-12 text-center">
+                <hr>
+                <h2 class="text-center"> Create a New Species Inside the Star Wars Universe!</h2>
+                <hr>
+                    <form actions="/create_species">
+                        {% csrf_token %}
+                        <label for="name"> Name: </label>
+                        <input type="text" name="name" id="name">
+                        <br>                        
+                        <label for="classification"> Classification: </label>
+                        <input type="text" classification="classification" id="classification">
+                        <br>
+                        <label for="designation"> Designation: </label>
+                        <input type="text" designation="designation" id="designation">
+                        <br>
+                        <label for="average_height"> Average Height: </label>
+                        <input type="text" average_height="average_height" id="average_height">
+                        <br>                        
+                        <label for="skin_colors"> Skin Color: </label>
+                        <input type="text" skin_colors="skin_colors" id="skin_colors">
+                        <br>                        
+                        <label for="eye_colors"> Eye Colors: </label>
+                        <input type="text" eye_colors="eye_colors" id="eye_colors">
+                        <br>                        
+                        <label for="average_lifespan"> Normal Lifespan: </label>
+                        <input type="text" average_lifespan="average_lifespan" id="average_lifespan">
+                        <br>                        
+                        <label for="homeworld"> Homeworld: </label>
+                        <input type="text" homeworld="homeworld" id="homeworld">
+                        <br>
+                        <label for="language"> Language: </label>
+                        <input type="text" language="language" id="language">
+                        <br>
+
+                        <input type="submit" value="Create">
+                        <select name="species" id="species">
+                            <option value="">Select a Species</option>
+                            {% for kind in species %}
+                                <option value="{{kind.pk}}"> {{kind.name}}</option>
+                            {% endfor %}
+                        </select>
+
+                    </form>
+                        {% if created %}
+                            <h4>Your Species Has Been Created!</h4>
+                        {% else %}
+                            <h4>All the Species Are Up to Date!</h4>
+                        {% endif %}
+                </div>
+            </div>
+        </div>
+    </div>
+
+{% endblock %}

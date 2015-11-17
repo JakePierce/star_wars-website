@@ -1,0 +1,14 @@
+
+
+{% block body %}
+
+<h2>Here is a List of All the Species Within the Star Wars Universe:</h2><hr><br>
+
+{% for kind in species %}
+
+    <bold></bold><a href="/species_detail/{{ species.pk }}">{{ kind.name }}</a><br>
+
+{% endfor %}
+
+{% endblock %}
+

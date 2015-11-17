@@ -1,0 +1,18 @@
+
+
+{% block body %}
+
+<h2> Here is a List of All the Vehicles in the Star Wars Universe: </h2>
+<hr>
+
+{% for vehicle in vehicles %}
+
+    <a href="/vehicle_detail/{{ vehicle.pk }}"> {{vehicle.name}}</a>
+    <br>
+
+{% endfor %}
+
+   
+
+
+{% endblock %}

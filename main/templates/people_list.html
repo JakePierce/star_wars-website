@@ -1,0 +1,22 @@
+
+
+{% block body %}
+
+{% for person in people %}
+
+    <bold>Character Name: </bold> <a href="/people_detail/{{ person.pk }}">{{ person.name }}</a>
+    <br>
+    <bold>Character Homeworld/Planet: </bold>{{ person.homeworld }}
+    <br>
+    <bold>Character Birth Date: </bold>{{ person.birth_year }}
+    <br>
+    <bold> Height: </bold>{{ person.height }}
+    <br>
+    <bold> Mass: </bold>{{ person.mass }}<br>
+    -------------------------------------------------------<br>
+
+{% endfor %}
+
+
+{% endblock %}
+

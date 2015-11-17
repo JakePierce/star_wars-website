@@ -1,0 +1,62 @@
+{% block body %}
+
+    <div class="container">
+        <div class="row">
+            <div class="box">
+                <div class="col-lg-12 text-center">
+                <hr>
+                <h2 class="text-center"> Create a New Character Inside the Star Wars Universe!</h2>
+                <hr>
+                    <form actions="/create_people/">
+                        {% csrf_token %}
+                        <label for="name"> Name: </label>
+                        <input type="text" name="name" id="name">
+                        <br>                        
+                        <label for="height"> Height: </label>
+                        <input type="text" height="height" id="height">
+                        <br>
+                        <label for="mass"> Mass: </label>
+                        <input type="text" mass="mass" id="mass">
+                        <br>
+                        <label for="hair_color"> Hair Color: </label>
+                        <input type="text" hair_color="hair_color" id="hair_color">
+                        <br>                        
+                        <label for="skin_color"> Skin Color: </label>
+                        <input type="text" skin_color="skin_color" id="skin_color">
+                        <br>                        
+                        <label for="eye_color"> Eye Color: </label>
+                        <input type="text" eye_color="eye_color" id="eye_color">
+                        <br>                        
+                        <label for="birth_year"> Birthday: </label>
+                        <input type="text" birth_year="birth_year" id="birth_year">
+                        <br>                        
+                        <label for="gender"> Gender: </label>
+                        <input type="text" gender="gender" id="gender">
+                        <br>
+                        <label for="homeworld"> Home Planet: </label>
+                        <input type="text" homeworld="homeworld" id="homeworld">
+                        <br>
+                        <label for="species"> Species: </label>
+                        <input type="text" species="species" id="species">
+                        <br>
+
+                        <input type="submit" value="Create">
+                        <select name="people" id="people">
+                            <option value="">Select a Character</option>
+                            {% for person in people %}
+                                <option value="{{person.pk}}"> {{person.name}}</option>
+                            {% endfor %}
+                        </select>
+
+                    </form>
+                        {% if created %}
+                            <h4>Your Character Has Been Created!</h4>
+                        {% else %}
+                            <h4>All the Characters Are Up to Date!</h4>
+                        {% endif %}
+                </div>
+            </div>
+        </div>
+    </div>
+
+{% endblock %}

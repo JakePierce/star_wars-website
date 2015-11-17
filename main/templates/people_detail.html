@@ -1,0 +1,25 @@
+{% block body %}
+<div class="container">
+    <div class="row">
+        <div class="box">
+            <div class="col-lg-12">
+            <hr>
+            <h2 class="intro-text text-center">
+                <bold>{{ people.name }} :</bold>
+            </h2>
+            <hr>
+            </div>
+        </div>
+
+        <h3> Hair Color: </h3> {{ people.hair_color }}
+        <h3> Skin Color: </h3> {{ people.skin_color }}
+        <h3> Eye Color: </h3> {{ people.skin_color }}<hr>
+        <h3> Gender: </h3> {{ people.gender }}
+        <h3> Birthplace: </h3> {{ people.homeworld }}
+        <h3> Film Appearance: </h3> {{ people.films }}<hr>
+
+
+    </div>
+</div>
+
+{% endblock body %}

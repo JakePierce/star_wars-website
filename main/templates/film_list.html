@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+{% load staticfiles %}
+
+{% block body %}
+
+<h2 class='text-center'> The Epic Series </h2> <hr>
+
+{% for films in film %}
+
+    Movie: <a href="/film_detail/{{ films.pk }}">{{ films.title }}</a>
+    <br>
+    Release Date: {{ films.release_date }}
+    <br>
+    Episode Number in Trilogy: {{ films.episode_id }}
+    <br>
+    Movie Director: {{ films.director }}
+    <br>
+    Opening Crawl: {{ films.opening_crawl }}
+    <br>
+
+    ...............................................<br><br>
+
+{% endfor %}
+
+{% endblock %}
