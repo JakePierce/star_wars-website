@@ -502,6 +502,7 @@ input.search-form:hover {
 }
 
 #main-slider .active .animation.animated-item-1 {
+  background-image: url({% static 'images/slider/universe.html' %})
   -webkit-animation: fadeInUp 300ms linear 300ms both;
   -moz-animation: fadeInUp 300ms linear 300ms both;
   -o-animation: fadeInUp 300ms linear 300ms both;

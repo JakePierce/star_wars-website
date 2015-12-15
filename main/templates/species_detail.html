@@ -1,3 +1,6 @@
+{% extends 'base.html' %}
+{% load staticfiles %}
+
 {% block body %}
     <div class="container">
             <div class="row">
@@ -13,10 +16,10 @@
     
     <bold>Species Classification: </bold>{{ species.classification }}<br>
     <bold>Mental Designation: </bold>{{ species.designation }}<br>
-    <bold>Average Height: </bold>{{ species.average_height }} centimeters<br>
+    <bold>Average Height: </bold>{{ species.average_height }} centimeters<br><hr>
     <bold>Skin Color: </bold>{{ species.skin_colors }}<br>
     <bold>Hair Color: </bold>{{ species.hair_colors }}<br>
-    <bold>Eye Color: </bold>{{ species.eye_colors }}<br>
+    <bold>Eye Color: </bold>{{ species.eye_colors }}<br><hr>
     <bold>Average Lifespan: </bold>{{ species.average_lifespan }} years<br>
     <bold>Homeworld: </bold>{{ species.homeworld }}<br>
     <bold>Native Language: </bold>{{ species.language }}<br> <hr>

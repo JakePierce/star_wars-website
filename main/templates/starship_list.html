@@ -1,20 +1,22 @@
-
+{% extends 'base.html' %}
+{% load staticfiles %}
 
 
 {% block body %}
-<h2 class>Here Is a List of All the Cool Starships You Know and Love in the Starwars Universe:</h2><hr>
-{% for starship in starships %}
+    <h2 class>Here Is a List of All the Cool Starships You Know and Love in the Starwars Universe:</h2><hr>
+        {% for starship in starships %}
 
-    <bold> Starship Name: </bold><a href="/starship_detail/{{ starship.pk }}"> {{ starship.name }}</a>
-    <br>
-    {{ starship.hyperdrive_rating }}
-    <br>
-    {{ starship.model }}
-    <br>
-    {{ starship.manufacturer }}
-    <br>
-    
-{% endfor %}
+            <bold> Starship Name: </bold><a href="/starship_detail/{{ starship.pk }}"> {{ starship.name }}</a>
+            <br>
+            {{ starship.hyperdrive_rating }}
+            <br>
+            {{ starship.model }}
+            <br>
+            {{ starship.manufacturer }}
+            <br>
+            <hr>
+            
+        {% endfor %}
 
 {% endblock %}
 

@@ -1,12 +1,9 @@
-
-
+{% extends 'base.html' %}
 {% block body %}
 
 {% for person in people %}
 
     <bold>Character Name: </bold> <a href="/people_detail/{{ person.pk }}">{{ person.name }}</a>
-    <br>
-    <bold>Character Homeworld/Planet: </bold>{{ person.homeworld }}
     <br>
     <bold>Character Birth Date: </bold>{{ person.birth_year }}
     <br>
